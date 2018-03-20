@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <mapping>
+        <class-a>com.mycompany.myapp.model.GetHolidayDateIn</class-a>
+        <class-b>com.holidaywebservice.holidayservice_v2.GetHolidayDate</class-b>
+        <field custom-converter-id="countryCustomConverter">
+            <a>codePaye</a>
+            <b>countryCode</b>
+        </field>
+        <field>
+            <a>codeVacance</a>
+            <b>holidayCode</b>
+        </field>
+        <field>
+            <a>annee</a>
+            <b>year</b>
+        </field>
+    </mapping>
+</mappings>

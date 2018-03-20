@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    
+    
+    <import resource="commonTestContext.xml"/>
+    
+    <bean id="countryCustomConverter" class="com.mycompany.myapp.tools.CountryCustomConverter" />
+    
+    <bean id="dozerMapper" name="dozerMapper" class="org.dozer.DozerBeanMapper">
+        <property name="mappingFiles">
+        	<list>
+        		<value>dozerGetHolidayDate.xml</value>
+        	</list>
+        </property>
+<!--         <property name="customConverters"> -->
+<!--         	<list> -->
+<!--         		<ref bean="countryCustomConverter"/> -->
+<!--         	</list> -->
+<!--         </property> -->
+        <property name="customConvertersWithId">
+        	<map>
+        		<entry key="countryCustomConverter" value-ref="countryCustomConverter"/>
+        	</map>
+        </property>
+    </bean>
+</beans>
